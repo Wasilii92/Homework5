@@ -4,55 +4,54 @@ public class Main {
         if (clientOS == '1') {
             System.out.println("Установите версию приложения Android по ссылке");
         } else {
-            if (clientOS == '0') {
-                System.out.println("Установите версию приложения iOS по ссылке");
-            }
+            System.out.println("Установите версию приложения iOS по ссылке");
         }
-        int yearOfMan = 2018;
-        if (clientOS == '1' && yearOfMan < 2015) {
-            System.out.println("Установите облегченную версию приложения Android по ссылке");
+
+        int clientDeviceYear = 2015;
+        if (clientDeviceYear < 2015) {
+            if (clientOS == '1') {
+                System.out.println("Установите облегченную версию Android по ссылке");
+            } else
+                System.out.println("Установите облегченную версию iOS по ссылке");
         } else {
-            if (clientOS == '0' && yearOfMan < 2015) {
-                System.out.println("Установите облегченную версию приложения iOS по ссылке");
+            System.out.println("Установите приложение по ссылке");
+        }
+
+        int year = 2025;
+        if (year < 1584) {
+            System.out.println(year + " не является  високосным.");
+        } else {
+            if (year % 400 == 0) {
+                System.out.println(year + " является високосным.");
             } else {
-                if (clientOS == '1' && yearOfMan > 2015) {
-                    System.out.println("Установите полную версию приложения Android по ссылке");
+                if (year % 100 == 0) {
+                    System.out.println(year + " не является високосным.");
                 } else {
-                    if (clientOS == '0' && yearOfMan > 2015) {
-                        System.out.println("Установите полную версию приложения iOS по ссылке");
+                    if (year % 4 == 0) {
+                        System.out.println(year + " является високосным.");
+                    } else {
+                        System.out.println(year + " не является високосным.");
                     }
                 }
             }
+        }
 
-        }
-        int year = 2025;
-        if (year % 4 == 0 && year % 100 != 0 && year >= 1584) System.out.println(year + " является високосным");
-        else {
-            System.out.println(year + " не является високосным");
-        }
         int deliveryDistance = 95;
         int time = 1;
-        if (deliveryDistance < 20) {
-            System.out.println(time = 1);
-        } else {
-            if (deliveryDistance > 20 && deliveryDistance < 60) {
-                System.out.println("Потребуется дней " + (time = time + 1));
-            } else {
-                if (deliveryDistance > 60 && deliveryDistance < 100) {
-                    System.out.println("Потребуется дней " + (time = time + 2));
-                } else {
-                    if (deliveryDistance > 100) {
-                        System.out.println("Доставки нет");
-
-                    }
-                }
-            }
+        if (deliveryDistance < 20)
+            System.out.println("Потребуется дней " + (time = 1));
+        else if (deliveryDistance < 60)
+            System.out.println("Потребуется дней " + (time = time + 1));
+        else if (deliveryDistance < 100)
+            System.out.println("Потребуется дней " + (time = time + 2));
+        else if (deliveryDistance > 100) {
+            System.out.println("Доставки нет");
         }
-        int monthNumber=12;
-        switch (monthNumber){
-        case 1:
-            System.out.println("Зима");
-            break;
+        int monthNumber = 12;
+        switch (monthNumber) {
+            case 1:
+                System.out.println("Зима");
+                break;
             case 2:
                 System.out.println("Зима");
                 break;
@@ -87,8 +86,9 @@ public class Main {
                 System.out.println("Зима");
                 break;
             default:
-            System.out.println("Такого месяца не существует");
+                System.out.println("Такого месяца не существует");
 
+        }
     }
 }
-}
+
